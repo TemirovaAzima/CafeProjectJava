@@ -1,4 +1,4 @@
-public record Product(String name,int price, String category) {
+public record Product(String name,double price, String category) {
 
     public Product {
         if(name.isBlank()) throw new IllegalArgumentException("Product name cannot be empty");
@@ -7,6 +7,6 @@ public record Product(String name,int price, String category) {
     }
 
     public String formatted(){
-        return String.format("%s (%s)  - 2%d PLN",name,category,price);
+        return String.format("%s (%s)  - %.2f PLN",name,category,price);
     }
 }
